@@ -21,7 +21,10 @@ public class Main {
         myLinkedList.prepend(1);
 
         System.out.println(myLinkedList.removeFirst().value + " value removed");
-
         LinkedList.printList(myLinkedList);
+
+        System.out.println("get():");
+        System.out.println(myLinkedList.get(0).value);
+        System.out.println(myLinkedList.get(2).value);
     }
 }
