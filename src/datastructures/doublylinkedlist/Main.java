@@ -15,5 +15,8 @@ public class Main {
         System.out.println("Removed: " + myDLL.removeLast().value);
         myDLL.printList();
 
+        myDLL.prepend(23);
+        myDLL.printList();
+
     }
 }
