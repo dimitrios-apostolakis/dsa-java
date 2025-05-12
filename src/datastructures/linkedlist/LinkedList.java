@@ -38,14 +38,14 @@ public class LinkedList {
 
     public void append(int value) {
         Node newNode = new Node(value);
-        if (this.length == 0){
-            this.head = newNode;
-            this.tail = newNode;
+        if (length == 0){
+            head = newNode;
+            tail = newNode;
         }else {
-            this.tail.next = newNode;
-            this.tail = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
-        this.length++;
+        length++;
     }
 
     public Node removeLast() {
@@ -66,5 +66,15 @@ public class LinkedList {
             tail = null;
         }
         return temp;
+    }
+
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        newNode.next = head;
+        head = newNode;
+        if (length == 0) {
+            tail = newNode;
+        }
+        length++;
     }
 }
