@@ -6,6 +6,7 @@ public class Main {
         myDLL.append(17);
         myDLL.append(7);
         myDLL.append(14);
+        myDLL.append(18);
 
         myDLL.getHead();
         myDLL.getTail();
@@ -20,6 +21,10 @@ public class Main {
 
         System.out.println("RemoveFirst: " + myDLL.removeFirst().value);
         myDLL.printList();
+
+        System.out.println("Get: " + myDLL.get(1).value);
+        System.out.println("Get: " + myDLL.get(2).value);
+//        myDLL.printList();
 
     }
 }
