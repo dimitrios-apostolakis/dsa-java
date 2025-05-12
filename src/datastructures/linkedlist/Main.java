@@ -20,6 +20,8 @@ public class Main {
         myLinkedList.append(4);
         myLinkedList.prepend(1);
 
+        System.out.println(myLinkedList.removeFirst().value + " value removed");
+
         LinkedList.printList(myLinkedList);
     }
 }
