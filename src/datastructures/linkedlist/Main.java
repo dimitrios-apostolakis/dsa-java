@@ -26,5 +26,14 @@ public class Main {
         System.out.println("get():");
         System.out.println(myLinkedList.get(0).value);
         System.out.println(myLinkedList.get(2).value);
+        System.out.println("List:");
+        LinkedList.printList(myLinkedList);
+
+        System.out.println("set():");
+        System.out.println(myLinkedList.set(0,10));
+        System.out.println(myLinkedList.set(2,20));
+        System.out.println(myLinkedList.set(3,99));
+        System.out.println("List:");
+        LinkedList.printList(myLinkedList);
     }
 }
