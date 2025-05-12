@@ -24,7 +24,11 @@ public class Main {
 
         System.out.println("Get: " + myDLL.get(1).value);
         System.out.println("Get: " + myDLL.get(2).value);
-//        myDLL.printList();
+        myDLL.printList();
+
+        System.out.println("Set: " + myDLL.set(1,90));
+        System.out.println("Set: " + myDLL.set(2,91));
+        myDLL.printList();
 
     }
 }
