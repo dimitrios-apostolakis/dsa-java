@@ -27,8 +27,8 @@ public class LinkedList {
         }
     }
 
-    public static void printList(LinkedList lk){
-        Node temp = lk.head;
+    public void printList(){
+        Node temp = head;
 
         while (temp != null){
             System.out.println(temp.value);
@@ -140,6 +140,9 @@ public class LinkedList {
         if (index == 0){
             return removeFirst();
         }
+        if (index == length - 1){
+            return removeLast();
+        }
         Node prev = get(index-1);
         Node temp = prev.next;  //get(index); O(n)
         prev.next = temp.next;
@@ -147,5 +150,19 @@ public class LinkedList {
         length--;
 
         return temp;
+    }
+
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        for (int i=0; i<length; i++){
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
     }
 }
