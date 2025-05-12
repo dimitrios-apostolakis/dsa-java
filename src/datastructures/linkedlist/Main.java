@@ -35,5 +35,17 @@ public class Main {
         System.out.println(myLinkedList.set(3,99));
         System.out.println("List:");
         LinkedList.printList(myLinkedList);
+
+        System.out.println("Insert1:");
+        System.out.println(myLinkedList.insert(1,81));
+        LinkedList.printList(myLinkedList);
+        System.out.println("Insert2:");
+        System.out.println(myLinkedList.insert(0,80));
+        LinkedList.printList(myLinkedList);
+        System.out.println("Insert3:");
+        System.out.println(myLinkedList.insert(4,82));
+        LinkedList.printList(myLinkedList);
+
+
     }
 }
