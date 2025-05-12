@@ -18,5 +18,8 @@ public class Main {
         myDLL.prepend(23);
         myDLL.printList();
 
+        System.out.println("RemoveFirst: " + myDLL.removeFirst().value);
+        myDLL.printList();
+
     }
 }
