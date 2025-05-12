@@ -46,6 +46,12 @@ public class Main {
         System.out.println(myLinkedList.insert(4,82));
         LinkedList.printList(myLinkedList);
 
+        System.out.println("Removed:");
+        System.out.println(myLinkedList.remove(5).value);
+        System.out.println(myLinkedList.remove(0).value);
+        System.out.println(myLinkedList.remove(1).value);
+        System.out.println("List after removal:");
+        LinkedList.printList(myLinkedList);
 
     }
 }
