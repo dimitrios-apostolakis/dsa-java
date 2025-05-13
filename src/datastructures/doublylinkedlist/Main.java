@@ -36,5 +36,11 @@ public class Main {
         System.out.println("Insert: " + myDLL.insert(0,70));
         myDLL.printList();
 
+//        System.out.println("Remove: " + myDLL.remove(7).value);
+        System.out.println("Remove: " + myDLL.remove(6).value);
+        System.out.println("Remove: " + myDLL.remove(0).value);
+        System.out.println("Remove: " + myDLL.remove(2).value);
+        myDLL.printList();
+
     }
 }

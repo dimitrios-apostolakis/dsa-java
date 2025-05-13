@@ -153,4 +153,39 @@ public class DoublyLinkedList {
         return true;
     }
 
+    public Node remove(int index){
+        if (index<0 || index>=length){
+            return null;
+        }
+        if (index==0){
+            return removeFirst();
+        }
+        if (index == length-1){
+            return removeLast();
+        }
+
+//        1st way - more readable
+//        Node temp = get(index);
+//        Node before = temp.prev;
+//        Node after = temp.next;
+//        before.next = after;
+//        after.prev = before;
+//        temp.next = null;
+//        temp.prev = null;
+
+        //2nd way - use 1 variable
+        Node temp2 = get(index);
+        temp2.prev.next = temp2.next;
+        temp2.next.prev = temp2.prev;
+        temp2.next = null;
+        temp2.prev = null;
+
+        length--;
+        if (length == 0){
+            head = null;
+            tail = null;
+        }
+        return temp2;
+    }
+
 }
