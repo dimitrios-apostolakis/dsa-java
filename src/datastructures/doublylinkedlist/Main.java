@@ -30,5 +30,11 @@ public class Main {
         System.out.println("Set: " + myDLL.set(2,91));
         myDLL.printList();
 
+        System.out.println("Insert: " + myDLL.insert(2,71));
+        System.out.println("Insert: " + myDLL.insert(6,79));
+        System.out.println("Insert: " + myDLL.insert(5,78));
+        System.out.println("Insert: " + myDLL.insert(0,70));
+        myDLL.printList();
+
     }
 }
