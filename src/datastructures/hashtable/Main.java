@@ -19,5 +19,6 @@ public class Main {
         System.out.println("Get: " + myHT.get("lum"));
         System.out.println("Get: " + myHT.get("lumber"));
 
+        System.out.println("All keys: " + myHT.keys());
     }
 }
