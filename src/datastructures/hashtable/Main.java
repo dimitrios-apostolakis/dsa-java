@@ -15,5 +15,9 @@ public class Main {
         myHT.set("screws", 140);
         myHT.printTable();
 
+        System.out.println("Get: " + myHT.get("tile"));
+        System.out.println("Get: " + myHT.get("lum"));
+        System.out.println("Get: " + myHT.get("lumber"));
+
     }
 }
