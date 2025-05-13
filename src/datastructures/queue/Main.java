@@ -10,5 +10,12 @@ public class Main {
         myQueue.getLast();
         myQueue.getLength();
         myQueue.printQueue();
+
+        myQueue.dequeue();
+        myQueue.printQueue();
+
+        myQueue.dequeue();
+        myQueue.dequeue();
+        myQueue.printQueue();
     }
 }

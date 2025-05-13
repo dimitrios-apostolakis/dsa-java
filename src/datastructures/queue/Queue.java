@@ -42,7 +42,7 @@ public class Queue {
         }
     }
 
-    public void enqueue(int value){
+    public void enqueue(int value){ //add item to end - fifo
         Node newNode = new Node(value);
         if (length == 0){
             first = newNode;
@@ -52,5 +52,20 @@ public class Queue {
             last = newNode;
         }
         length++;
+    }
+
+    public Node dequeue(){  //remove item from start - last in last out
+        if (length == 0){
+            return null;
+        }
+        Node temp = first;
+        first = first.next;
+        temp.next = null;
+        length--;
+        if (length == 0){
+            first = null;
+            last = null;
+        }
+        return temp;
     }
 }
