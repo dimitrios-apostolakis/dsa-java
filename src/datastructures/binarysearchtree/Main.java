@@ -20,5 +20,12 @@ public class Main {
 
         System.out.println(myBST.contains(1));
         System.out.println(myBST.contains(27));
+
+
+        System.out.println("\nBST Contains 27:");
+        System.out.println(myBST.rContains(27));
+
+        System.out.println("\nBST Contains 17:");
+        System.out.println(myBST.rContains(17));
     }
 }
