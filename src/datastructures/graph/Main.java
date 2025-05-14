@@ -15,5 +15,11 @@ public class Main {
 
         System.out.println(myGraph.addEdge("C", "B"));
         myGraph.printGraph();
+
+        System.out.println(myGraph.removeEdge("A", "B"));
+        myGraph.printGraph();
+
+        System.out.println(myGraph.removeEdge("A", "C"));
+        myGraph.printGraph();
     }
 }
