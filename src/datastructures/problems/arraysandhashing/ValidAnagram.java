@@ -1,8 +1,7 @@
-package datastructures.problems;
+package datastructures.problems.arraysandhashing;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Hashtable;
 
 public class ValidAnagram {
 

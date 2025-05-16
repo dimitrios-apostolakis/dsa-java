@@ -1,4 +1,4 @@
-package datastructures.problems;
+package datastructures.problems.arraysandhashing;
 
 import java.util.Arrays;
 import java.util.HashSet;
