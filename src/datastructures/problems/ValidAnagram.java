@@ -2,6 +2,7 @@ package datastructures.problems;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Hashtable;
 
 public class ValidAnagram {
 
@@ -30,8 +31,25 @@ public class ValidAnagram {
             countT.put(t.charAt(i),countT.getOrDefault(t.charAt(i), 0) + 1);
         }
 
-
         return countS.equals(countT);
+    }
+
+    //array: time comp O(n + m) | space comp O(1) because 26 chars
+    public static boolean isAnagramA(String s, String t){
+        if (s.length() != t.length()) return false;
+
+        int[] count = new int[26];
+
+        for(int i=0; i<s.length(); i++){
+            count[s.charAt(i) - 'a']++;
+            count[t.charAt(i) - 'a']--;
+        }
+
+        for (int val : count){
+            if (val != 0) return false;
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
@@ -39,5 +57,6 @@ public class ValidAnagram {
         String t = "carrace";
         System.out.println("Sorting: " + isAnagramS(s,t));
         System.out.println("Hash Map: " + isAnagramHM(s,t));
+        System.out.println("Array: " + isAnagramA(s,t));
     }
 }
