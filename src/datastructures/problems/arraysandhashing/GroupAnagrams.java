@@ -11,9 +11,9 @@ public class GroupAnagrams {
         for (String s : strs){
             char[] toCharArray = s.toCharArray();
             Arrays.sort(toCharArray);
-            String strsSorted = new String(toCharArray);
-            res.putIfAbsent(strsSorted, new ArrayList<>());
-            res.get(strsSorted).add(s);
+            String strSorted = new String(toCharArray);
+            res.putIfAbsent(strSorted, new ArrayList<>());
+            res.get(strSorted).add(s);
         }
         return new ArrayList<>(res.values());
     }
