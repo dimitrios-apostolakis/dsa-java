@@ -19,12 +19,44 @@ public class ProductExceptSelf {
         return res;
     }
 
+    //division: time comp O(n) | space comp O(1), O(n)
+    public static int[] productExceptSelfDiv(int[] nums) {
+        int prod = 1, zeroCount = 0;
+        for (int num : nums) {
+            if (num != 0) {
+                prod *= num;
+            } else {
+                zeroCount++;
+            }
+        }
+
+        if (zeroCount > 1) {
+            return new int[nums.length];
+        }
+
+        int[] res = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            if (zeroCount > 0) {
+                res[i] = (nums[i] == 0) ? prod : 0;
+            } else {
+                res[i] = prod / nums[i];
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] nums = {1,2,4,6};
         int[] nums2 = {-1,0,1,2,3};
+        int[] nums3 = {5,0,6,0,8};
 
         System.out.println(Arrays.toString(productExceptSelf(nums)));
         System.out.println(Arrays.toString(productExceptSelf(nums2)));
+        System.out.println(Arrays.toString(productExceptSelf(nums3)));
+
+        System.out.println(Arrays.toString(productExceptSelfDiv(nums)));
+        System.out.println(Arrays.toString(productExceptSelfDiv(nums2)));
+        System.out.println(Arrays.toString(productExceptSelfDiv(nums3)));
     }
 
 
