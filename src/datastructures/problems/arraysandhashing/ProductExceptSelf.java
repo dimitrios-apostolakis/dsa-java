@@ -66,6 +66,23 @@ public class ProductExceptSelf {
         return res;
     }
 
+    //Prefix & Suffix Optimal: time comp O(n) | space comp O(1), O(n)
+    public static int[] productExceptSelfPSO(int[] nums) {
+        int n = nums.length;
+        int[] res = new int[n];
+
+        res[0] = 1;
+        for (int i = 1; i < n; i++) {
+            res[i] = res[i - 1] * nums[i - 1];
+        }
+        int postfix = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            res[i] *= postfix;
+            postfix *= nums[i];
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] nums = {1,2,4,6};
         int[] nums2 = {-1,0,1,2,3};
@@ -85,6 +102,11 @@ public class ProductExceptSelf {
         System.out.println(Arrays.toString(productExceptSelfPS(nums)));
         System.out.println(Arrays.toString(productExceptSelfPS(nums2)));
         System.out.println(Arrays.toString(productExceptSelfPS(nums3)));
+
+        System.out.println("\nPrefix & Suffix Optimal:");
+        System.out.println(Arrays.toString(productExceptSelfPSO(nums)));
+        System.out.println(Arrays.toString(productExceptSelfPSO(nums2)));
+        System.out.println(Arrays.toString(productExceptSelfPSO(nums3)));
     }
 
 
