@@ -1,8 +1,6 @@
 package datastructures.problems.arraysandhashing;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class LongestConsecutive {
 
@@ -66,6 +64,21 @@ public class LongestConsecutive {
         return longest;
     }
 
+    //hash map: time comp O(n) | space comp O(n)
+    public static int longestConsecutiveHM(int[] nums){
+        Map<Integer, Integer> mp = new HashMap<>();
+        int res = 0;
+        for (int num : nums){
+            if (!mp.containsKey(num)){
+                mp.put(num, mp.getOrDefault(num - 1, 0) + mp.getOrDefault(num + 1, 0) + 1);
+                mp.put(num - mp.getOrDefault(num - 1, 0), mp.get(num));
+                mp.put(num + mp.getOrDefault(num + 1, 0), mp.get(num));
+                res = Math.max(res, mp.get(num));
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         int[] nums = {2,20,4,10,3,4,5};
         int[] nums2 = {0,3,2,5,4,6,1,1};
@@ -85,5 +98,10 @@ public class LongestConsecutive {
         System.out.println(longestConsecutiveHS(nums));
         System.out.println(longestConsecutiveHS(nums2));
         System.out.println(longestConsecutiveHS(nums3));
+
+        System.out.println("\nHash Map:");
+        System.out.println(longestConsecutiveHM(nums));
+        System.out.println(longestConsecutiveHM(nums2));
+        System.out.println(longestConsecutiveHM(nums3));
     }
 }
