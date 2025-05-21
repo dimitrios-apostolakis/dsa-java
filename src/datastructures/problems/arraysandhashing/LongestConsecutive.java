@@ -47,6 +47,25 @@ public class LongestConsecutive {
         return res;
     }
 
+    //hash set: time comp O(n) | space comp O(n)
+    public static int longestConsecutiveHS(int[] nums){
+        Set<Integer> numSet = new HashSet<>();
+        for (int num : nums){
+            numSet.add(num);
+        }
+        int longest = 0;
+        for (int num : numSet){
+            if (!numSet.contains(num - 1)) {
+                int length = 1;
+                while (numSet.contains(num + length)) {
+                    length++;
+                }
+                longest = Math.max(longest, length);
+            }
+        }
+        return longest;
+    }
+
     public static void main(String[] args) {
         int[] nums = {2,20,4,10,3,4,5};
         int[] nums2 = {0,3,2,5,4,6,1,1};
@@ -61,5 +80,10 @@ public class LongestConsecutive {
         System.out.println(longestConsecutiveS(nums));
         System.out.println(longestConsecutiveS(nums2));
         System.out.println(longestConsecutiveS(nums3));
+
+        System.out.println("\nHash Set:");
+        System.out.println(longestConsecutiveHS(nums));
+        System.out.println(longestConsecutiveHS(nums2));
+        System.out.println(longestConsecutiveHS(nums3));
     }
 }
